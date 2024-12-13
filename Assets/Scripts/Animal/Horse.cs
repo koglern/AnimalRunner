@@ -4,7 +4,9 @@ public class Horse : Animal
 {
     protected override void Start()
     {
+        // Calls the Start() method implementation from the parent (base) class.
         base.Start();
+        speed = 4.0f;
         Debug.Log("Horse initialized!");
     }
 

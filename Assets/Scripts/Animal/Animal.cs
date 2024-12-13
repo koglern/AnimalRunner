@@ -1,12 +1,14 @@
+using System;
 using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float speed = 5f;
+    public float speed = 2.5f; //standard speed, can be overriden in child classes
     public float jumpForce = 5f;
     public float boundaryRight = 10f;
     public float boundaryLeft = -10f;
+    public bool isOnGround = true;
 
     private float _horizontalInput;
     private Vector3 _animalPosition;
@@ -21,8 +23,7 @@ public class Animal : MonoBehaviour
             Debug.LogError("Rigidbody component is missing on " + gameObject.name);
         }
     }
-
-    // Hauptupdate-Methode
+    
     protected virtual void Update()
     {
         HandleMovement();
@@ -40,9 +41,10 @@ public class Animal : MonoBehaviour
     // Sprung-Logik
     private void HandleJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && rb != null)
+        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isOnGround = false;
         }
     }
 
@@ -52,6 +54,14 @@ public class Animal : MonoBehaviour
         _animalPosition = transform.position;
         _animalPosition.x = Mathf.Clamp(_animalPosition.x, boundaryLeft, boundaryRight);
         transform.position = _animalPosition;
+    }
+
+    public void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isOnGround = true;
+        }
     }
 }
 
