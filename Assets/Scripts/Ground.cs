@@ -3,22 +3,22 @@ using UnityEngine;
 public class Ground : MonoBehaviour
 {
     public float speed;
-    public GameObject otherGround; // Referenz auf den anderen Boden
+    public GameObject otherGround; //reference to the other ground
     private Renderer background;
     private float backgroundWidth;
 
     void Start()
     {
         background = GetComponent<Renderer>();
-        backgroundWidth = background.bounds.size.z; // Z-Länge des Bodens
+        backgroundWidth = background.bounds.size.z; 
     }
 
     void Update()
     {
-        // Bewegt den Boden kontinuierlich nach hinten
+        // Move Ground to the back
         transform.Translate(new Vector3(0, 0, -1) * (speed * Time.deltaTime));
 
-        // Wenn der aktuelle Boden hinter die Kamera scrollt, wird er versetzt
+        // move ground, if it scrolls behind camera
         if (transform.position.z < -backgroundWidth)
         {
             Reposition();
@@ -27,7 +27,7 @@ public class Ground : MonoBehaviour
 
     void Reposition()
     {
-        // Setzt den aktuellen Boden vor den anderen Boden
+        // set current ground before the other one
         transform.position = new Vector3(
             transform.position.x,
             transform.position.y,
