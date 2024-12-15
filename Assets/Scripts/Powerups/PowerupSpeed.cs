@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class PowerupSpeed : MonoBehaviour
+public class SpeedPowerUp : PowerUp
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Speed Power-Up Settings")]
+    [SerializeField] private float speedIncreaseAmount = 200f;
+
+    protected override void ApplyEffect(Animal animal)
     {
-        
+        animal.speed += speedIncreaseAmount; // Increase the animal's speed
+        Debug.Log(animal.name + " speed increased by " + speedIncreaseAmount);
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void RemoveEffect(Animal animal)
     {
-        
+        animal.speed -= speedIncreaseAmount; // Reset the speed
+        Debug.Log(animal.name + " speed power-up effect removed.");
     }
 }

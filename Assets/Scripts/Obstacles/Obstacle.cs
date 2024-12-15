@@ -14,6 +14,11 @@ public class Obstacle : MonoBehaviour
     protected virtual void  Update()
     {
         move();
+
+        if (transform.position.y < -30)
+        {
+            Destroy(this);
+        }
     }
 
     /*

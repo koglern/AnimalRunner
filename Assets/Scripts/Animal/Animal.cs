@@ -6,8 +6,8 @@ public class Animal : MonoBehaviour
     [Header("Movement Settings")]
     public float speed = 2.5f; //standard speed, can be overriden in child classes
     public float jumpForce = 5f;
-    public float boundaryRight = 10f;
-    public float boundaryLeft = -10f;
+    public float boundaryRight = 15f;
+    public float boundaryLeft = -15f;
     public bool isOnGround = true;
 
     [SerializeField] private GameObject gameOverPopup;
@@ -67,6 +67,7 @@ public class Animal : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            Debug.Log("Collission with" + other.gameObject.name);
             TriggerGameOver();
         }
     }
