@@ -1,16 +1,26 @@
 using UnityEngine;
 
-public class Barrel : MonoBehaviour
+public class Barrel : Obstacle
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float rotationForce;
+    protected override void Start()
     {
+        base.Start();
+    }
+
+    
+    protected override void Update()
+    {
+        base.Update();
+    }
+    
+    protected override void move() 
+    {
+        base.move();
+        // Roll around the local X-axis (perpendicular to movement direction)
+        transform.Rotate(Vector3.right * (rotationForce * Time.deltaTime), Space.Self);
+
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

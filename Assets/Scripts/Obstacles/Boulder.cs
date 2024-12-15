@@ -1,16 +1,26 @@
+using System;
 using UnityEngine;
 
-public class Boulder : MonoBehaviour
+public class Boulder : Obstacle
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Rigidbody _rb;
+    public float moveForce;
+
+    protected override void Start()
     {
-        
+        base.Start();
+        _rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    protected override void Update()
     {
+        base.Update();
+    }
+
+    protected override void move() 
+    {
+        _rb.AddForce(base._moveDirection * moveForce, ForceMode.Force);
         
     }
 }
