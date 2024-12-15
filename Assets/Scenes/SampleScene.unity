@@ -394,6 +394,8 @@ MonoBehaviour:
   - {fileID: 8421030229866394564, guid: b2fa28b5259372e48b377227cd21ac62, type: 3}
   - {fileID: 2047188414771777652, guid: 5abffbdbb350ad746b7541ac491a3abb, type: 3}
   - {fileID: 3292339132632006280, guid: fb19d50e273a75243afaac993ca75bc1, type: 3}
+  - {fileID: 6982049916631949306, guid: 65572b55abf787c49a32b90eba70cc3b, type: 3}
+  - {fileID: 4591652096972374814, guid: cee509e391218a24ab63c9134132a341, type: 3}
   spawnInterval: 2
 --- !u!1 &313660687
 GameObject:
@@ -458,9 +460,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  jumpForce: 2000
-  boundaryRight: 10
-  boundaryLeft: -10
+  jumpForce: 1000
+  boundaryRight: 20
+  boundaryLeft: -20
   isOnGround: 0
   gameOverPopup: {fileID: 9028811}
 --- !u!65 &358836868
@@ -1105,9 +1107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
-  jumpForce: 500
-  boundaryRight: 10
-  boundaryLeft: -10
+  jumpForce: 200
+  boundaryRight: 20
+  boundaryLeft: -20
   isOnGround: 0
   gameOverPopup: {fileID: 9028811}
 --- !u!65 &1235284774
@@ -1443,9 +1445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  jumpForce: 5000
-  boundaryRight: 10
-  boundaryLeft: -10
+  jumpForce: 4000
+  boundaryRight: 20
+  boundaryLeft: -20
   isOnGround: 0
   gameOverPopup: {fileID: 9028811}
 --- !u!65 &1811150101

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3830194177638126803}
   - component: {fileID: 2237214118055788076}
   - component: {fileID: 1166535280645719601}
-  - component: {fileID: 4816609696987585494}
+  - component: {fileID: 5411397875085668340}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Obstacle
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421030229866394564}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.42, z: 58.3}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1.09, y: 1.42, z: 58.3}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421030229866394564}
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 270efc4fb3c7ef74cb77f88b77cefaa1, type: 3}
 --- !u!23 &3830194177638126803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &4816609696987585494
+--- !u!136 &5411397875085668340
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6717383
-  m_Height: 0.9465275
+  m_Radius: 0.3886249
+  m_Height: 0.9368583
   m_Direction: 1
-  m_Center: {x: -0.6717383, y: -0.00000011920929, z: 0}
+  m_Center: {x: 0, y: 0, z: 0.000000029802322}
