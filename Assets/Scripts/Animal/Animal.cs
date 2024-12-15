@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Animal : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -10,6 +10,8 @@ public class Animal : MonoBehaviour
     public float boundaryLeft = -10f;
     public bool isOnGround = true;
 
+    [SerializeField] private GameObject gameOverPopup;
+    
     private float _horizontalInput;
     private Vector3 _animalPosition;
     protected Rigidbody rb;
@@ -61,7 +63,27 @@ public class Animal : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            
+        }
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            TriggerGameOver();
         }
     }
+    
+    public void TriggerGameOver()
+    {
+        // Freeze the game
+        Time.timeScale = 0f;
+
+        // Activate the Game Over UI
+        if (gameOverPopup != null)
+        {
+            gameOverPopup.SetActive(true);
+        }
+
+        Debug.Log("Game Over triggered!");
+    }
+    
 }
 
