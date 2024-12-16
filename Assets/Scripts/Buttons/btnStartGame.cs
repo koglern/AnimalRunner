@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class btnStartGame : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private string sceneToLoad = "MainGame"; // The name of your main game scene
+    [SerializeField] private string sceneToLoad = "MainGame";
 
     public void startGame()
     {

@@ -7,13 +7,15 @@ public class SpeedPowerUp : PowerUp
 
     protected override void ApplyEffect(Animal animal)
     {
-        animal.speed += speedIncreaseAmount; // Increase the animal's speed
+        // Increase the animal's speed
+        animal.speed += speedIncreaseAmount; 
         Debug.Log(animal.name + " speed increased by " + speedIncreaseAmount);
     }
 
     protected override void RemoveEffect(Animal animal)
     {
-        animal.speed -= speedIncreaseAmount; // Reset the speed
+        // Reset the speed
+        animal.speed -= speedIncreaseAmount; 
         Debug.Log(animal.name + " speed power-up effect removed.");
     }
 }

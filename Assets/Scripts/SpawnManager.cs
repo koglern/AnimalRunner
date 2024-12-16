@@ -13,7 +13,6 @@ public class SpawnManager : MonoBehaviour
     {
         spawnPoint = new Vector3(0, 1, 60);
         
-        // Start spawning objects repeatedly
         InvokeRepeating(nameof(SpawnRandomObject), 0f, spawnInterval);
     }
 
@@ -31,18 +30,10 @@ public class SpawnManager : MonoBehaviour
 
         // Calculate random spawn position
         Vector3 position;
-        float randomX = Random.Range(-20f, 20f); // Random X value between -20 and 20
-
-        if (spawnPoint != null)
-        {
-            position = new Vector3(randomX, spawnPoint.y, spawnPoint.z);
-        }
-        else
-        {
-            position = new Vector3(randomX, transform.position.y, transform.position.z);
-        }
-
-        // Spawn the object
+        float randomX = Random.Range(-20f, 20f);
+        
+        position = new Vector3(randomX, spawnPoint.y, spawnPoint.z);
+        
         Instantiate(prefabToSpawn, position, Quaternion.identity);
     }
 }

@@ -9,6 +9,11 @@ public abstract class PowerUp : MonoBehaviour
     [Header("Power-Up Settings")]
     [SerializeField] protected float duration = 5f; // Duration of the power-up effect
 
+    // Abstract methods for effect application and removal
+    protected abstract void ApplyEffect(Animal animal);
+    protected abstract void RemoveEffect(Animal animal);
+    
+    
     protected virtual void  Start()
     {
         MoveDirection = new Vector3(0, 0, -1);
@@ -33,8 +38,8 @@ public abstract class PowerUp : MonoBehaviour
             Animal animal = other.GetComponent<Animal>();
             if (animal != null)
             {
-                ApplyEffect(animal); // Apply the effect to the animal
-                StartCoroutine(RemovePowerUpAfterDuration(animal)); // Schedule removal
+                ApplyEffect(animal); 
+                StartCoroutine(RemovePowerUpAfterDuration(animal)); // Schedule removal of effect
                 GetComponent<Renderer>().enabled = false; // Hide the power-up
             }
             else
@@ -43,11 +48,7 @@ public abstract class PowerUp : MonoBehaviour
             }
         }
     }
-
-    // Abstract methods for effect application and removal
-    protected abstract void ApplyEffect(Animal animal);
-    protected abstract void RemoveEffect(Animal animal);
-
+    
     private IEnumerator RemovePowerUpAfterDuration(Animal animal)
     {
         yield return new WaitForSeconds(duration);

@@ -10,7 +10,7 @@ public class Obstacle : MonoBehaviour
         _moveDirection = new Vector3(0, 0, -1);
     }
 
-    // with protectec virtual we can override the class in the child objects. otherwise it would stay the same
+    // with protected virtual we can override the class in the child objects. otherwise it would stay the same
     protected virtual void  Update()
     {
         move();

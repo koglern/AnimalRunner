@@ -15,8 +15,7 @@ public class Animal : MonoBehaviour
     private float _horizontalInput;
     private Vector3 _animalPosition;
     protected Rigidbody rb;
-
-    // Initialisierung
+    
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -32,15 +31,13 @@ public class Animal : MonoBehaviour
         HandleJump();
         ClampPosition();
     }
-
-    // Bewegung des Tieres
+    // ABSTRACTION: Higher-level methods like HandleMovement, HandleJump, and TriggerGameOver
     private void HandleMovement()
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * (_horizontalInput * speed * Time.deltaTime));
     }
-
-    // Sprung-Logik
+    
     private void HandleJump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
@@ -50,7 +47,7 @@ public class Animal : MonoBehaviour
         }
     }
 
-    // Begrenzung der Position innerhalb der festgelegten Grenzen
+    // Animal cannot move out of fixed Boundaries
     private void ClampPosition()
     {
         _animalPosition = transform.position;

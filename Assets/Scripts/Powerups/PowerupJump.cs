@@ -7,13 +7,15 @@ public class PowerupJump : PowerUp
 
     protected override void ApplyEffect(Animal animal)
     {
-        animal.jumpForce += jumpIncreaseAmount; // Increase jump force
+        // Increase jump force
+        animal.jumpForce += jumpIncreaseAmount; 
         Debug.Log(animal.name + " jump force increased by " + jumpIncreaseAmount);
     }
 
     protected override void RemoveEffect(Animal animal)
     {
-        animal.jumpForce -= jumpIncreaseAmount; // Reset the jump force
+        // Reset the jump force
+        animal.jumpForce -= jumpIncreaseAmount; 
         Debug.Log(animal.name + " jump power-up effect removed.");
     }
 }
